@@ -1,0 +1,33 @@
+.moviesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+@media (max-width: 1200px) {
+  .moviesContainer {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .moviesContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.loading {
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.filterModal {
+  width: 100%;
+  max-width: 800px;
+  height: 60%;
+  background-color: red;
+}

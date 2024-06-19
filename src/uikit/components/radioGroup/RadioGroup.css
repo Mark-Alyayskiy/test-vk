@@ -1,0 +1,68 @@
+.wrap {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+.radioInput {
+  width: 100%;
+  position: fixed;
+  opacity: 0;
+  pointer-events: none;
+}
+.button {
+  height: 40px;
+  width: 100%;
+  max-width: 140px;
+  background-color: inherit;
+  border: 1px solid #247e6f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-family: Inter;
+  padding: 16px 35px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #000;
+  font-family: sans-serif;
+  transition: 0.2s opacity ease-in-out;
+}
+
+.button:hover {
+  cursor: pointer;
+  opacity: 0.7;
+  transition: 0.2s opacity ease-in-out;
+}
+
+.buttonActive {
+  font-family: sans-serif;
+  height: 40px;
+  width: 100%;
+  max-width: 140px;
+  background-color: #247e6f;
+  border: 1px solid #247e6f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  padding: 16px 35px;
+  font-weight: 500;
+  font-size: 14px;
+  color: #000;
+  transition: 0.2s opacity ease-in-out;
+}
+
+.buttonActive:hover {
+  cursor: pointer;
+  opacity: 0.7;
+  transition: 0.2s opacity ease-in-out;
+}

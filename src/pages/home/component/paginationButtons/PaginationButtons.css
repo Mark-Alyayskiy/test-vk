@@ -1,0 +1,44 @@
+.pagination {
+  width: 60%;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+  height: 40px;
+}
+.activePage {
+  background-color: orange;
+
+  width: 100%;
+  max-width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  border: none;
+}
+.activePage:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.page:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+.page {
+  border-radius: 4px;
+  background-color: gray;
+
+  width: 100%;
+  max-width: 40px;
+  height: 40px;
+  border: none;
+}
+.paginationButton {
+  width: 100%;
+  max-width: 100px;
+  height: 40px;
+}
+
+.paginationButton:hover {
+  cursor: pointer;
+}

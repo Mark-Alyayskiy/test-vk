@@ -1,0 +1,21 @@
+.headerContainer {
+  width: 100%;
+  height: 80px;
+  background-color: gray;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 40px;
+}
+
+.name {
+  font-size: 30px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.clearLink {
+  text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  color: inherit;
+}

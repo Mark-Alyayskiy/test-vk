@@ -1,0 +1,41 @@
+.header {
+}
+
+.movieDetailContainer {
+  width: 100%;
+  height: 100%;
+}
+
+.titleMovie {
+  font-size: 30px;
+  font-weight: 700;
+  text-align: start;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.mainWrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 50px;
+}
+
+.favoriteMovieButton {
+  background-color: inherit;
+  border: none;
+  padding: 0px;
+}
+
+.goodRatingMovie {
+  font-size: 20px;
+  text-align: left;
+  color: green;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.badRatingMovie {
+  font-size: 20px;
+  color: red;
+  text-align: left;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}

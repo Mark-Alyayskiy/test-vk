@@ -1,0 +1,17 @@
+.infoBlock {
+}
+
+.infoBlockRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.infoBlockRowGenres {
+  display: flex;
+  flex-direction: row;
+  padding: 0 10px;
+}
+
+.genre {
+  padding: 0 5px;
+}
