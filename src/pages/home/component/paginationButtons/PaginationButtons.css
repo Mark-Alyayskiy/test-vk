@@ -1,5 +1,5 @@
 .pagination {
-  width: 60%;
+  width: fit-content;
   padding-bottom: 20px;
   display: flex;
   justify-content: space-around;
@@ -10,10 +10,12 @@
   background-color: orange;
 
   width: 100%;
-  max-width: 40px;
+  width: 40px;
   height: 40px;
   border-radius: 4px;
   border: none;
+  margin: 5px;
+  box-sizing: border-box;
 }
 .activePage:hover {
   cursor: pointer;
@@ -25,15 +27,19 @@
   opacity: 0.9;
 }
 .page {
+  margin: 5px;
+  box-sizing: border-box;
   border-radius: 4px;
   background-color: gray;
 
   width: 100%;
-  max-width: 40px;
+  width: 40px;
   height: 40px;
   border: none;
 }
 .paginationButton {
+  margin: 5px;
+  box-sizing: border-box;
   width: 100%;
   max-width: 100px;
   height: 40px;

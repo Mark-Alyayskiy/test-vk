@@ -1,4 +1,4 @@
-export type IconName = "closeIcon" | "starIcon" | "logoIcon";
+export type IconName = "closeIcon" | "starIcon" | "logoIcon" | "trashIcon";
 
 export type UseIconComponentArgs = {
   name: IconName;

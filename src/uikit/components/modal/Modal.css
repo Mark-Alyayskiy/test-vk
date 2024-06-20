@@ -37,7 +37,7 @@
   width: 100%;
   max-width: 890px;
   height: 100%;
-  max-height: calc(100vh - 300px);
+  max-height: calc(100vh - 200px);
   overflow-y: auto;
   height: 100%;
   flex-direction: row;

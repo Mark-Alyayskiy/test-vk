@@ -31,3 +31,10 @@
   flex-direction: row;
   gap: 20px;
 }
+
+.buttonGroup {
+  margin: 0 auto;
+  display: flex;
+  width: fit-content;
+  gap: 20px;
+}

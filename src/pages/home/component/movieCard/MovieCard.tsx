@@ -11,7 +11,7 @@ const MovieCard: FC<MovieCardProps> = ({
   previewUrl,
   rating,
   year,
-  addToFavorites,
+  clickOnFavoriteButton,
   isFavorite,
 }) => {
   const ratingStyle = useMemo(
@@ -22,21 +22,30 @@ const MovieCard: FC<MovieCardProps> = ({
   const handleAddToFavorites = useCallback(
     (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
       event.preventDefault();
-      addToFavorites();
+      clickOnFavoriteButton();
     },
-    [addToFavorites]
+    [clickOnFavoriteButton]
   );
 
   return (
     <Link key={id} to={`/movies/${id}`} className="movieCardLink">
       <div className="cardWrapper">
         <button className="favoriteButton" onClick={handleAddToFavorites}>
-          <Icon
-            name="starIcon"
-            width="35px"
-            height="35px"
-            color={isFavorite ? "yellow" : "none"}
-          />
+          {!isFavorite ? (
+            <Icon
+              name="starIcon"
+              width="35px"
+              height="35px"
+              color={isFavorite ? "yellow" : "none"}
+            />
+          ) : (
+            <Icon
+              name="trashIcon"
+              width="35px"
+              height="35px"
+              color={isFavorite ? "yellow" : "none"}
+            />
+          )}
         </button>
         <div className={ratingStyle}>{rating}</div>
         <MovieImagePreview url={previewUrl} altName={name} />

@@ -4,6 +4,6 @@ export type MovieCardProps = {
   previewUrl: string;
   year: number;
   rating: number;
-  addToFavorites: () => void;
+  clickOnFavoriteButton: () => void;
   isFavorite?: boolean;
 };

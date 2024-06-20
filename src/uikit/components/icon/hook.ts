@@ -12,6 +12,8 @@ export const useIconComponent = ({ name }: UseIconComponentArgs) => {
         return I.StarIcon;
       case "logoIcon":
         return I.LogoIcon;
+      case "trashIcon":
+        return I.TrashIcon;
 
       default:
         return null;

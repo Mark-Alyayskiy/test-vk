@@ -6,7 +6,7 @@ import "./FavoriteMovies.css";
 import Layout from "components/layout/Layout";
 
 const FavoriteMovies = () => {
-  const { deleteFavoriteMovie, clearLocalStorage, getFavorites } =
+  const { deleteFavoriteMovie, clearLocalStorage, getFavorites, isFavorite } =
     useFavorite();
   const [movies, setMovies] = useState<Movie[]>([]);
 
@@ -22,22 +22,26 @@ const FavoriteMovies = () => {
   return (
     <Layout>
       <div>
-        <button
-          onClick={() => {
-            clearLocalStorage();
-            setMovies([]);
-          }}
-        >
-          Delete all favorite
-        </button>
-        <div className="moviesContainer">
+        {movies.length > 0 && (
+          <button
+            onClick={() => {
+              clearLocalStorage();
+              setMovies([]);
+            }}
+          >
+            Удалить коллекцию
+          </button>
+        )}
+
+        <div className="favoritesMoviesContainer">
           {movies.length === 0 ? (
             <p className="text">В вашей коллекции пока нет фильмов</p>
           ) : (
             movies.map((movie) => (
               <MovieCard
                 key={movie.id}
-                addToFavorites={() => handleDelete(movie.id.toString())}
+                isFavorite={isFavorite(movie.id.toString())}
+                clickOnFavoriteButton={() => handleDelete(movie.id.toString())}
                 id={movie.id}
                 name={movie.name}
                 previewUrl={movie.poster?.previewUrl}

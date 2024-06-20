@@ -4,7 +4,7 @@ import { LayoutProps } from "./types";
 import Header from "components/header/Header";
 import FilterModal from "uikit/components/modal/filterModal/FilterModal";
 
-const Layout: FC<LayoutProps> = ({ children }) => {
+const Layout: FC<LayoutProps> = ({ children, homeScreen }) => {
   const [modalIsShown, setModalIsShown] = useState(false);
 
   const toggleModal = () => {
@@ -16,7 +16,7 @@ const Layout: FC<LayoutProps> = ({ children }) => {
   };
   return (
     <>
-      <Header toggleModal={toggleModal} />
+      <Header homeScreen={homeScreen} toggleModal={toggleModal} />
       <div className="layoutContainer">
         <FilterModal
           toggleModal={toggleModal}

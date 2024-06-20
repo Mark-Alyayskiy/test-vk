@@ -5,19 +5,24 @@ import { Icon } from "uikit/components/icon";
 
 type HeaderProps = {
   toggleModal: () => void;
+  homeScreen?: boolean;
 };
 
-const Header: FC<HeaderProps> = ({ toggleModal }) => {
+const Header: FC<HeaderProps> = ({ toggleModal, homeScreen }) => {
   return (
     <div className="headerContainer">
       <Link className="clearLink" to="/">
         <Icon name="logoIcon" height="60px" width="60px" />
         <p className="name">Movie поиск</p>
       </Link>
+      {homeScreen && (
+        <button className="headerButton" onClick={toggleModal}>
+          Фильтры
+        </button>
+      )}
 
-      <button onClick={toggleModal}>Modal</button>
       <Link to="/favorite">
-        <button onClick={toggleModal}>Favorite</button>
+        <button className="headerButton">Избранная фильмография</button>
       </Link>
     </div>
   );

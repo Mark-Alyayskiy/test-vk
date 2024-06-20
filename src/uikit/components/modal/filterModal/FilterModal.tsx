@@ -3,15 +3,13 @@ import Modal from "../Modal";
 import { Icon } from "uikit/components/icon";
 import "./FilterModal.css";
 import RadioGroup from "uikit/components/radioGroup/RadioGroup";
-import { buttons } from "./constants";
+import { buttons, ratingOptions } from "./constants";
 import { GlobalContext } from "context/GlobalContext";
 import { Filters, Props } from "./types";
 import Input from "uikit/components/input/Input";
 import InfoBlock from "./infoBlock/infoBlock";
 import Button from "uikit/components/button/Button";
 import Dropdown from "uikit/components/dropdown/Dropdown";
-
-const ratingOptions = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"];
 
 const FilterModal: FC<Props> = ({
   toggleModal,
@@ -101,6 +99,23 @@ const FilterModal: FC<Props> = ({
     toggleModal();
   };
 
+  const clearFilters = () => {
+    setSelectedButtons([]);
+    setSelectedRatingStart("");
+    setSelectedRatingEnd("");
+    setFilters({
+      genres: [],
+      rating: {
+        start: 0,
+        end: 10,
+      },
+      year: {
+        start: 1874,
+        end: 2050,
+      },
+    });
+  };
+
   return (
     <Modal
       toggleModal={toggleModal}
@@ -150,12 +165,19 @@ const FilterModal: FC<Props> = ({
           />
         </div>
       </div>
-      <InfoBlock genres={filters.genres} />
-      <Button
-        disable={isFiltersEmpty()}
-        onClick={applyFilters}
-        name="ПРИНЯТЬ"
-      />
+      <InfoBlock filters={filters} />
+      <div className="buttonGroup">
+        <Button
+          disable={isFiltersEmpty()}
+          onClick={applyFilters}
+          name="ПРИНЯТЬ"
+        />
+        <Button
+          disable={isFiltersEmpty()}
+          onClick={clearFilters}
+          name="ОЧИСТИТЬ"
+        />
+      </div>
     </Modal>
   );
 };

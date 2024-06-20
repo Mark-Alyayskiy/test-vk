@@ -21,6 +21,8 @@
 }
 
 .favoriteMovieButton {
+  display: flex;
+  align-items: center;
   background-color: inherit;
   border: none;
   padding: 0px;

@@ -1,3 +1,9 @@
 .text {
   margin: 40px auto;
 }
+
+.favoritesMoviesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}

@@ -1,10 +1,8 @@
-import React, { FC, useEffect, useState } from "react";
+import React, { FC, useCallback, useEffect } from "react";
 import MovieCard from "./component/movieCard/MovieCard";
 import "./Home.css";
-import Header from "components/header/Header";
 import PaginationButtons from "./component/paginationButtons/PaginationButtons";
 import { useMovies } from "./hook";
-import FilterModal from "uikit/components/modal/filterModal/FilterModal";
 import { useFavorite } from "hooks/addToFavorite";
 import Layout from "components/layout/Layout";
 
@@ -21,18 +19,31 @@ const Home: FC = () => {
     totalPages,
   } = useMovies();
 
-  const { addToFavorites, isFavorite } = useFavorite();
+  const { addToFavorites, isFavorite, deleteFavoriteMovie } = useFavorite();
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, [currentPage]);
+
+  const handleClickFavoriteButton = useCallback(
+    (movie) => {
+      return () => {
+        if (isFavorite(movie.id.toString())) {
+          deleteFavoriteMovie(movie.id.toString());
+        } else {
+          addToFavorites(movie);
+        }
+      };
+    },
+    [addToFavorites, deleteFavoriteMovie, isFavorite]
+  );
 
   if (error) {
     return <p>{JSON.stringify(error)}</p>;
   }
 
   return (
-    <Layout>
+    <Layout homeScreen>
       <div className="moviesContainer">
         {moviesIsLoading ? (
           <div className="loading">Loading...</div>
@@ -41,8 +52,9 @@ const Home: FC = () => {
             <div className="moviesContainer">
               {movies.map((movie) => (
                 <MovieCard
+                  key={movie.id}
                   isFavorite={isFavorite(movie.id.toString())}
-                  addToFavorites={() => addToFavorites(movie)}
+                  clickOnFavoriteButton={handleClickFavoriteButton(movie)}
                   id={movie.id}
                   name={movie.name}
                   previewUrl={movie.poster?.previewUrl}
